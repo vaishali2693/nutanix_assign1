@@ -1,0 +1,48 @@
+package tutorial;
+
+message Movie {
+  required string name = 1;
+
+  enum Month {
+    Jan = 0;
+    Feb = 1;
+    Mar = 2;
+    Apr = 3;
+    May = 4;
+    Jun = 5;
+    Jul = 6;
+    Aug = 7;
+    Sep = 8;
+    Oct = 9;
+    Nov = 10;
+    Dec = 11;
+  }
+
+  enum Genre {
+    Adventure = 0;
+    Sci_fi = 1;
+    Comedy = 2;
+    Drama = 3;
+  }
+
+  message Date {
+    required int32 day = 1;
+    required Month month = 2;
+    required int32 year = 3;
+  }
+
+  message Review {
+    required string username = 1;
+    optional int32 rating = 2;
+    optional Date doc = 3;
+    optional string comment = 4;
+  }
+
+  required Date dor = 2;
+  optional Genre genre = 3;
+  optional int32 duration = 4;
+  repeated string actor = 5;
+  repeated string director = 6;
+  repeated Review review = 7;
+
+}
